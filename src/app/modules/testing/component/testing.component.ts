@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TestingHttpService } from '../services/testing.http.service';
 
 @Component({
   selector: 'app-testing',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class TestingComponent {
 
+  constructor(public http: TestingHttpService) {
+    http.getTestingModelAll().subscribe(data => {
+      console.log(data[0]);
+    });
+  }
+  
 }
