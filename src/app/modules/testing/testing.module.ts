@@ -9,6 +9,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { TestingStateReducer } from './@state/reducers/testing.reducer';
 import { LoadTestingEffect } from './@state/effects/load-testing.effect';
+import { AgGridModule } from 'ag-grid-angular';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { LoadTestingEffect } from './@state/effects/load-testing.effect';
   imports: [
     CommonModule,
     HttpClientModule,
+    AgGridModule,
     StoreModule.forFeature('testing', TestingStateReducer),
     EffectsModule.forFeature([
       LoadTestingEffect
